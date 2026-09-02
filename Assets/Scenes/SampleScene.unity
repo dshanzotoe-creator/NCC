@@ -489,7 +489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41c1d1f2621daf4e831d9b9afb5be18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkPlayerSpawner
-  playerCount: 0
 --- !u!114 &402599397
 MonoBehaviour:
   m_ObjectHideFlags: 0
