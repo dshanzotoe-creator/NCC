@@ -13,11 +13,17 @@ public class PlayerID : NetworkBehaviour
     void Start()
     {
         clientOwnerID = OwnerClientId;
+        ChangePlayerName();
     }
 
     // Update is called once per frame
     void Update()
     {
        
+    }
+
+    void ChangePlayerName()
+    {
+        gameObject.name = $"Player {clientOwnerID}"; 
     }
 }

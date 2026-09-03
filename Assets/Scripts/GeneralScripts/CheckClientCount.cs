@@ -14,7 +14,19 @@ public class CheckClientCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerCount = NetworkManager.Singleton.ConnectedClients.Count;
+
+        playerCount = GetPlayerCount();
        
+    }
+
+    int GetPlayerCount()
+    {
+        int players = 0;
+
+        if(NetworkManager.Singleton.ConnectedClients.Count == 0 )
+             return players;
+        else
+            players = NetworkManager.Singleton.ConnectedClients.Count;
+            return players; 
     }
 }
