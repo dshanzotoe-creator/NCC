@@ -74,7 +74,7 @@ public class NetworkPlayerController : NetworkBehaviour
 
         if(keyPressed != KeyCode.None)
         {
-            Debug.Log($"Tick: {tick}, MoveInput: {moveInput}");
+            Debug.Log($"Tick: {tick}, MoveInput: {moveInput}, Jump: {jump}");
             moveInput = new Vector2(0, 0);
         }
 
