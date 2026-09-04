@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Netcode;
+using UnityEditor;
 
 public class NetworkPlayerController : NetworkBehaviour
 {
@@ -28,7 +29,6 @@ public class NetworkPlayerController : NetworkBehaviour
     private void FixedUpdate()
     {
         UpdateTickRate();
-
     }
 
 
@@ -70,11 +70,18 @@ public class NetworkPlayerController : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)) 
         {
             keyPressed = KeyCode.LeftShift;
+            dash = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            keyPressed = KeyCode.Space;
+            jump = true;
         }
 
         if(keyPressed != KeyCode.None)
         {
-            Debug.Log($"Tick: {tick}, MoveInput: {moveInput}, Jump: {jump}");
+            Debug.Log($"Tick: {tick}, MoveInput: {moveInput}, Jump: {jump}, Dash: {dash}");
             moveInput = new Vector2(0, 0);
         }
 
