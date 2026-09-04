@@ -42,7 +42,7 @@ public class NetworkPlayerController : NetworkBehaviour
             
     }
 
-    KeyCode ReadInput()
+    protected KeyCode ReadInput()
     {
         KeyCode keyPressed = KeyCode.None;
 
