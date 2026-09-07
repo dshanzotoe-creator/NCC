@@ -12,7 +12,10 @@ public class SpawnPointHandler : NetworkBehaviour
     private void Awake()
     {
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
-        
+        players = GameObject.FindGameObjectsWithTag("Player");
+
+        if (players.Length > 0)
+            AssignPlayerToSpawnPoint();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,10 +27,7 @@ public class SpawnPointHandler : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
-
-        if (players.Length > 0)
-            AssignPlayerToSpawnPoint();
+     
     }
 
 

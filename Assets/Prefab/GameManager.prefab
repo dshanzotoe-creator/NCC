@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8455104376856986950}
   - component: {fileID: 595596407277037271}
-  - component: {fileID: 113118439807416204}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45,34 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3231586542
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 2747964289
+  InScenePlacedSourceGlobalObjectIdHash: 3231586542
   m_InScenePlacedDisabledByDefault: 0
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
-  m_InScenePlaced: 0
+  m_InScenePlaced: 1
   ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
+  SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &113118439807416204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987370862497419439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75216a99ab57fa24cadd86cf2127dae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointHandler
-  ShowTopMostFoldoutHeaderGroup: 1
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}

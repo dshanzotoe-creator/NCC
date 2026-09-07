@@ -1,17 +1,24 @@
 using UnityEngine;
 using Unity.Netcode;
-using UnityEditor;
+
 
 public class NetworkPlayerController : NetworkBehaviour
 {
     private uint tick;
     
-    Vector2 moveInput = Vector2.zero; 
+    public Vector2 moveInput = Vector2.zero; 
 
     bool jump = false;
 
     bool dash = false;
 
+    PlayerNetwork pN;
+
+
+    private void Awake()
+    {
+        pN = GetComponent<PlayerNetwork>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,6 +51,7 @@ public class NetworkPlayerController : NetworkBehaviour
 
     protected KeyCode ReadInput()
     {
+        moveInput = Vector2.zero; 
         KeyCode keyPressed = KeyCode.None;
 
         if (Input.GetKey(KeyCode.W))
@@ -60,12 +68,12 @@ public class NetworkPlayerController : NetworkBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             keyPressed = KeyCode.D;
-            moveInput += new Vector2(-1,0);
+            moveInput += new Vector2(1,0);
         }
         if (Input.GetKey(KeyCode.A))
         {
             keyPressed = KeyCode.A;
-            moveInput += new Vector2(1, 0);
+            moveInput += new Vector2(-1, 0);
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) 
         {
@@ -81,8 +89,7 @@ public class NetworkPlayerController : NetworkBehaviour
 
         if(keyPressed != KeyCode.None)
         {
-            Debug.Log($"Tick: {tick}, MoveInput: {moveInput}, Jump: {jump}, Dash: {dash}");
-            moveInput = new Vector2(0, 0);
+            pN.SendInputRpc(moveInput, tick);   
         }
 
         return keyPressed;
